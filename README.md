@@ -116,18 +116,13 @@ __Description:__
 __Functions:__
 - `get_metadata_updates_since`: Returns metadata updates since a specified offset/timestamp. If later than 10 minutes, sends the entire snapshot; otherwise, sends updates for topics, partitions, and broker information only.
 
-#!/bin/bash
-
-To run it make sure you pip install the required libraries and then run these commands on 3 different terminals.
-
+```bash
 # Start Raft Node 1
-python3 raft_http1.py -a 127.0.0.1:5010 -i 1 -e 2/127.0.0.1:5020,3/127.0.0.1:5030 &
+$ python3 raft_http1.py -a 127.0.0.1:5010 -i 1 -e 2/127.0.0.1:5020,3/127.0.0.1:5030
 
 # Start Raft Node 2
-python3 raft_http2.py -a 127.0.0.1:5020 -i 2 -e 1/127.0.0.1:5010,3/127.0.0.1:5030 &
+$ python3 raft_http2.py -a 127.0.0.1:5020 -i 2 -e 1/127.0.0.1:5010,3/127.0.0.1:5030
 
 # Start Raft Node 3
-python3 raft_http3.py -a 127.0.0.1:5030 -i 3 -e 2/127.0.0.1:5020,1/127.0.0
-
-
+$ python3 raft_http3.py -a 127.0.0.1:5030 -i 3 -e 2/127.0.0.1:5020,1/127.0.0
 
