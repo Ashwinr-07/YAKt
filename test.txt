@@ -1,0 +1,75 @@
+Registering Broker Record: ()
+
+{
+		"internalUUID": "1045", 
+		"brokerId": 112,  
+		"brokerHost": "eg1.com", 
+		"brokerPort": "9092", 
+		"securityProtocol": "SSL", 
+		"brokerStatus": "ALIVE", 
+		"rackId": "Rack-1",
+		"epoch": 1
+}
+
+{
+	"internalUUID": "2046",
+	"brokerId": 113,
+	"brokerHost": "eg2.com",
+	"brokerPort": "9093",
+	"securityProtocol": "SSL",
+	"brokerStatus": "ALIVE",
+	"rackId": "Rack-2",
+	"epoch": 2
+}
+
+
+Registering Topic Record:
+
+{
+    "topicUUID": "UI-new1",  
+    "name": "Topic1" 
+}
+
+{
+	"topicUUID": "UI-new2",
+	"name": "Topic2"
+}
+
+Creating Partition Record:
+{
+	"partitionId": 1,
+	"topicUUID": "UI-new1",
+	"replicas": [112, 113, 114],
+	"ISR": [112, 113],
+	"removingReplicas": [],
+	"addingReplicas": [],
+	"leader": "112",
+	"partitionEpoch": 1
+}
+
+{
+	"partitionId": 2,
+	"topicUUID": "UI-new2",
+	"replicas": [113, 114, 115],
+	"ISR": [113, 114],
+	"removingReplicas": [],
+	"addingReplicas": [],
+	"leader": "113",
+	"partitionEpoch": 2
+}
+
+
+Registering Producer:
+{
+	"producerId": 1
+}
+
+{
+	"producerId": 2
+}
+
+
+
+
+
+
