@@ -1,7 +1,9 @@
 ### YAKt
-#Yet Another Kraft
+## Yet Another KRAFT
 
-# Title
+## About KRAFT
+- KRaft is a event based, distributed metadata management system that was written to replace Zookeeper in the ecosystem of Kafka.
+- It uses Raft as an underlying consensus algorithm to do log replication and manage consistency of state.
 
 ## Heading 1
 
