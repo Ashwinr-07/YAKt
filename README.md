@@ -65,7 +65,7 @@ __Functions:__
 - `get_all_active_brokers`: Retrieves information about all active brokers.
 - `get_broker_by_id`: Retrieves information about a specific broker by its ID.
 
-__API Endpoint that accesses the TopicRecord metadata record__
+__API Endpoints that access/modify the TopicRecord metadata record__
 
 
 __Description:__
@@ -75,69 +75,59 @@ __Functions:__
 - `create_topic`: Creates a new topic.
 - `get_topic_by_name`: Retrieves information about a specific topic by its name.
 
-## PartitionRecord
+__API Endpoints that access/modify the PartitionRecord metadata record__
 
-### Description:
+__Description:__
 - Manages partitions within Kafka topics.
 
-### Functions:
+__Functions:__
 - `create_partition`: Creates a new partition.
 
-## ProducerIdsRecord
+__API Endpoints that access/modify the ProducerIdsRecord metadata record__
 
-### Description:
+__Description:__
 - Manages producer registrations from brokers.
 
-### Functions:
+__Functions:__
 - `register_producer_from_broker`: Registers a producer from a broker.
 
-## BrokerRegistrationChangeBrokerRecord
+__API Endpoints that access/modify the BrokerRegistrationChangeBrokerRecord metadata record__
 
-### Description:
+__Description:__
 - Manages updates to brokers, including incrementing the epoch on changes and unregistering brokers.
 
-## Functions:
+__Functions:__
 - `update_broker`: Updates broker information and increments the epoch.
 - `unregister_broker`: Unregisters a broker from the system.
 
-## Broker Management (BrokerMgmt)
+### Broker Management (BrokerMgmt)
 
-### Description:
+__Description:__
 - Provides management functions related to brokers.
 
-### Functions:
+__Functions:__
 - `get_metadata_updates_since`: Returns metadata updates since a specified offset/timestamp. If later than 10 minutes, sends the entire snapshot; otherwise, sends a diff of updated metadata.
 
-## Client Management (ClientMgmt)
+### Client Management (ClientMgmt)
 
-### Description:
+__Description:__
 - Provides management functions related to clients.
 
-### Functions:
+__Functions:__
 - `get_metadata_updates_since`: Returns metadata updates since a specified offset/timestamp. If later than 10 minutes, sends the entire snapshot; otherwise, sends updates for topics, partitions, and broker information only.
 
+#!/bin/bash
 
-Content for subheading 3 goes here.
+To run it make sure you pip install the required libraries and then run these commands on 3 different terminals.
 
-## Heading 4
+# Start Raft Node 1
+python3 raft_http1.py -a 127.0.0.1:5010 -i 1 -e 2/127.0.0.1:5020,3/127.0.0.1:5030 &
 
-Content for heading 4 goes here.
+# Start Raft Node 2
+python3 raft_http2.py -a 127.0.0.1:5020 -i 2 -e 1/127.0.0.1:5010,3/127.0.0.1:5030 &
 
-### Subheading 4
+# Start Raft Node 3
+python3 raft_http3.py -a 127.0.0.1:5030 -i 3 -e 2/127.0.0.1:5020,1/127.0.0
 
-Content for subheading 4 goes here.
 
-## Heading 5
-
-Content for heading 5 goes here.
-
-### Subheading 5
-
-Content for subheading 5 goes here.
-
-```bash
-# Bash Console 1
-$ command1
-
-$ command2
 
