@@ -1,6 +1,9 @@
 # YAKt
 ### Yet Another KRAFT
 
+<img width="295" alt="image" src="https://github.com/Ashwinr-07/YAKt/assets/105007681/e5ad3bff-c26b-4f0d-a020-5bec12e45026">
+
+
 ## About KRAFT
 - KRaft is a event based, distributed metadata management system that was written to replace Zookeeper in the ecosystem of Kafka.
 - It uses Raft as an underlying consensus algorithm to do log replication and manage consistency of state.
