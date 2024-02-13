@@ -1,19 +1,27 @@
-### YAKt
-## Yet Another KRAFT
+# YAKt
+### Yet Another KRAFT
 
 ## About KRAFT
 - KRaft is a event based, distributed metadata management system that was written to replace Zookeeper in the ecosystem of Kafka.
 - It uses Raft as an underlying consensus algorithm to do log replication and manage consistency of state.
 
-## Heading 1
+## Languages / libraries Used:
+Language Used : Python 
 
-Content for heading 1 goes here.
+###Libraries:
+- Flask - HTTP Server
+- Pyraft - Raft Consensus Library
+- Telnetlib - a Python library that provides Telnet client functionality for communicating with remote devices over the Telnet protocol.
+- Threading Library
 
-### Subheading 1
+### Testing:
+- Postman for API Testing.
 
-Content for subheading 1 goes here.
 
-## Heading 2
+
+## Raft Architecture
+<img width="511" alt="image" src="https://github.com/Ashwinr-07/YAKt/assets/105007681/4173e06f-746c-4d40-9fec-6b5b6e2c6619">
+
 
 Content for heading 2 goes here.
 
